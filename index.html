@@ -8,7 +8,7 @@
 <body>
     <header>
         <div>View high Scores</div>
-        <div>Time:</div>
+        <div id="timer">Time:</div>
         <link rel="stylesheet" href="./assets/css/style.css">
     </header>
     <main>
@@ -26,10 +26,10 @@
                 <button class="btn"id ="answer-button4">Answer 4</button>
             </div>
         </div>
-        <div class="final-score-form hide" id="final-score-form">
+        <div class="final-score-container hide" id="final-score-form">
             <div id= final-score>final score</div>
-            <form>
-                <input type="text">
+            <form id="submit-final-score">
+                Enter Initials: <input type="text">
                 <input type="submit">
             </form>
         </div>

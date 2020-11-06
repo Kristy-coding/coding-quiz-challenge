@@ -21,9 +21,13 @@ var button3 = document.getElementById("answer-button3");
 
 var button4 = document.getElementById("answer-button4"); 
 
+var timerEl = document.getElementById('timer');
+
 var index = 0;
 
 var score = 0;
+
+var timeLeft = 75;
 
 var questionObjArray = [
     { //questionObj [0]
@@ -75,13 +79,36 @@ var questionObjArray = [
 // we listen for a button click on start-button
 // when the start button is clicked the start button event listener triggers startQuiz()
 
+var countDown = function(){
+
+    //use the setInterval() method to call a function to be executed every 1000 milliseconds
+
+    var timeInterval = setInterval(function(){ 
+        if(timeLeft > 1) {
+            //set the textContent of the timerEl to show the remaining seconds
+            timerEl.textContent = "Time: " + timeLeft;
+            // then decrement timeLeft by 1
+            timeLeft--;
+        }
+        else {
+        // else will mean once timer gets to zero the timer will stop and the user will be taken to endQuiz()
+            clearInterval(timeInterval)
+            endQuiz();
+        }
+ 
+    }, 1000);  
+
+};
+
+
 var startQuiz = function(){
 
     startChallengeContainerEl.classList.add("hide");
+    
     // then the timer starts 
+    countDown();
 
     // we then want to call displayQuiz() to present the first quesiton 
-
     displayQuiz();
 };
 
@@ -129,6 +156,8 @@ var handleAnswerClick = function(event){
     }
     else {
         alert("Sorry you got it WRONG!");
+        // time = time - 10sec 
+        timeLeft-= 10
     }
     
     // Once we are finished answering the current question we need to move to the next question by incrementing the questionObjArray[index] by +1
@@ -147,6 +176,8 @@ var handleAnswerClick = function(event){
 
 var endQuiz = function() {
 
+    // when all questions are answered or when array [i] > array.length  or the timer reaches 0 end the game 
+
     quizContainerEl.classList.add("hide");
 
     finalScoreFormEl.classList.remove("hide");
@@ -155,10 +186,16 @@ var endQuiz = function() {
 
     finalScoreEl.textContent = "Your final score is " + score + "/" + questionObjArray.length + "."
 
+    // set up an event listener for submit button and enter key 
+    //when the user enters their initials into the input field and clicks submit the eventListener triggers scoreHandler()
 
+};
 
-    // when all questions are answered or when array [i] > array.length  or the timer reaches 0 end the game 
+var scoreHandler = function() {
+//the submited initials and score are stored in local storage
+//then the user is taken to the highscore page where their score and initials are displayed from local storage 
 
+console.log("in scoreHandler");
 };
 
 
