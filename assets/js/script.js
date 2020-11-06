@@ -21,6 +21,8 @@ var button3 = document.getElementById("answer-button3");
 
 var button4 = document.getElementById("answer-button4"); 
 
+var submitButtonEl = document.getElementById("submit-button");
+
 var timerEl = document.getElementById('timer');
 
 var index = 0;
@@ -186,16 +188,30 @@ var endQuiz = function() {
 
     finalScoreEl.textContent = "Your final score is " + score + "/" + questionObjArray.length + "."
 
-    // set up an event listener for submit button and enter key 
-    //when the user enters their initials into the input field and clicks submit the eventListener triggers scoreHandler()
+    // set up an event listener for submit button 
+    //when the user enters their initials into the input field and clicks submit they are taken to scoreHandler()
 
 };
 
-var scoreHandler = function() {
-//the submited initials and score are stored in local storage
-//then the user is taken to the highscore page where their score and initials are displayed from local storage 
+var scoreHandler = function(event) {
+    event.preventDefault();
+    // save initials and score to local storage 
 
-console.log("in scoreHandler");
+    var storedInitials = document.getElementById('initials').value;
+    var storedScore = score
+  
+    if (storedInitials === '') {
+      alert("initials cannot be blank");
+    
+      // Save storedInitials and score to localStorage using `setItem()`
+      localStorage.setItem('initials', storedInitials);
+      localStorage.setItem('score', storedScore);
+      }
+
+    console.log("you are in scoreHandler");
+
+    //then the user is taken to the highscore page where their score and initials are displayed from local storage 
+
 };
 
 
@@ -208,3 +224,6 @@ button2.addEventListener("click", handleAnswerClick);
 button3.addEventListener("click", handleAnswerClick); 
 
 button4.addEventListener("click", handleAnswerClick); 
+
+submitButtonEl.addEventListener ("click", scoreHandler);
+
