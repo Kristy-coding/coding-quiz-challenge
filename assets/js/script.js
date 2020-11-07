@@ -202,13 +202,17 @@ var scoreHandler = function(event) {
   
     if (storedInitials === '') {
       alert("initials cannot be blank");
+
+    }
     
       // Save storedInitials and score to localStorage using `setItem()`
       localStorage.setItem('initials', storedInitials);
       localStorage.setItem('score', storedScore);
-      }
+      
 
-    console.log("you are in scoreHandler");
+      console.log(storedInitials,storedScore);
+
+        console.log("you are in scoreHandler");
 
     //then the user is taken to the highscore page where their score and initials are displayed from local storage 
 
