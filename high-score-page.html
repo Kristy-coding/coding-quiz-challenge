@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Score Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<div class="high-score-container">
+<h1>High Scores</h1>
+<ul class="high-score-list" id="high-score-list">
+    <li id="high-score-list-item">Initials-score</li>
+</ul>
+<div class="score-page-buttons">
+<button class="btn">Go Back</button>
+<button class="btn">Clear highscore</button>
+</div>
+</div>
+ <script>
+
+//var scoreIndex = 0
+//var highScores = highScores[scoreIndex];
+
+var highScoreList = document.getElementById("high-score-list");
+
+var highScoreListItemEl = document.getElementById("high-score-list-item");
+
+var printHighScores = function() {
+    
+    highScoreListItemEl.textContent = highScores[0]
+
+    highScoreList.appendChild(highScoreListItemEl);
+
+    console.log(highScores);
+
+
+
+
+    
+}
+ </script>   
+</body>
+</html>

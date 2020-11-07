@@ -31,6 +31,10 @@ var score = 0;
 
 var timeLeft = 75;
 
+var highScores = [];
+
+
+
 var questionObjArray = [
     { //questionObj [0]
         title: "Arrays in JavaScript can be used to store___.",
@@ -207,19 +211,27 @@ var scoreHandler = function(event) {
 
     storedScoreObj = {initials: storedInitials, storedScore: storedScore};
 
-    // make an empty array [] for highscore 
-    // highScores.push(storedScoreObj)
+
+    // make an empty array [] for highScore in push them into the array
+     highScores.push(storedScoreObj);
 
     // save highScores to local storage?
 
-    // localStorage.setItem JSON.stringify ('highScores', highScores);
+    localStorage.setItem('highScores', JSON.stringify(highScores));
 
-    // localStorage.getItemJSON.parse('highScores', highScores);
-      
+    //get saved scores from localstorage
+
+    highScores = JSON.parse(localStorage.getItem('highScores', highScores));
+
+    console.log(highScores);
+    console.log(highScores[0]);
+
     //then the user is taken to the highscore page where their score and initials are displayed from local storage
-    // store theses values in objects in an array?? so we can pull them from from local storage and save them on high score page??
+
+    window.location.href="high-score-page.html";
 
 };
+
 
 
 startButtonEl.addEventListener("click", startQuiz); 
