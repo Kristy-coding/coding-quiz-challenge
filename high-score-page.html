@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-<div class="high-score-container">
-<h1>High Scores</h1>
-<ul class="high-score-list" id="high-score-list">
-    <li id="high-score-list-item">Initials-score</li>
-</ul>
-<div class="score-page-buttons">
-<button class="btn">Go Back</button>
-<button class="btn">Clear highscore</button>
-</div>
-</div>
+    <div class="high-score-container">
+        <h1>High Scores</h1>
+        <ul class="high-score-list" id="high-score-list">
+            <li id="high-score-list-item">Initials-score</li>
+        </ul>
+        <div class="score-page-buttons">
+            <button class="btn" onclick= "window.location.href='index.html'">Go Back</button>
+            <button class="btn">Clear highscore</button>
+        </div>
+    </div>
  <script>
 
 //var scoreIndex = 0
@@ -32,13 +32,9 @@ var printHighScores = function() {
 
     highScoreList.appendChild(highScoreListItemEl);
 
-    console.log(highScores);
+    console.log(highScores);    
+};
 
-
-
-
-    
-}
  </script>   
 </body>
 </html>
