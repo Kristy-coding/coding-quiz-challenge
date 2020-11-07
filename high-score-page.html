@@ -10,30 +10,47 @@
     <div class="high-score-container">
         <h1>High Scores</h1>
         <ul class="high-score-list" id="high-score-list">
-            <li id="high-score-list-item">Initials-score</li>
+            <li id="high-score-list-item"></li>
         </ul>
         <div class="score-page-buttons">
             <button class="btn" onclick= "window.location.href='index.html'">Go Back</button>
-            <button class="btn">Clear highscore</button>
+            <button id="clear-button"class="btn">Clear highscore</button>
         </div>
     </div>
  <script>
 
-//var scoreIndex = 0
-//var highScores = highScores[scoreIndex];
+
+var highScores = JSON.parse(localStorage.getItem('highScores', highScores));
+
+console.log(highScores);
 
 var highScoreList = document.getElementById("high-score-list");
 
-var highScoreListItemEl = document.getElementById("high-score-list-item");
+clearButtonEl = document.getElementById("clear-button");
+
+var highScoreListItemEl =document.createElement("li")
 
 var printHighScores = function() {
-    
-    highScoreListItemEl.textContent = highScores[0]
 
-    highScoreList.appendChild(highScoreListItemEl);
+    for (var i = 0; i<highScores.length; i++){
+        
+        var highScoreListItemEl =document.createElement("li")
 
-    console.log(highScores);    
+        highScoreListItemEl.textContent = highScores[i].initials + "-" + highScores[i].storedScore
+
+        highScoreList.appendChild(highScoreListItemEl); 
+    }  
 };
+
+printHighScores();
+
+var clearHighScores = function(){
+
+    highScoreListItemEl.textContent = [];
+};
+
+clearButtonEl.addEventListener("click", clearHighScores);
+
 
  </script>   
 </body>

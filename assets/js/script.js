@@ -211,6 +211,12 @@ var scoreHandler = function(event) {
 
     storedScoreObj = {initials: storedInitials, storedScore: storedScore};
 
+    highScores = JSON.parse(localStorage.getItem('highScores', highScores));
+
+        if (highScores=== null){
+            highScores = [];
+
+        }
 
     // make an empty array [] for highScore in push them into the array
      highScores.push(storedScoreObj);
@@ -221,7 +227,7 @@ var scoreHandler = function(event) {
 
     //get saved scores from localstorage
 
-    highScores = JSON.parse(localStorage.getItem('highScores', highScores));
+   
 
     console.log(highScores);
     console.log(highScores[0]);
