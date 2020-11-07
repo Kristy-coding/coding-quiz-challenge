@@ -7,15 +7,15 @@
 </head>
 <body>
     <header>
-        <div>View high Scores</div>
+        <div>View high scores</div>
         <div id="timer">Time:</div>
         <link rel="stylesheet" href="./assets/css/style.css">
     </header>
     <main>
         <div class="start-challenge-container" id="start-challenge-container">
             <h1>Coding Quiz Challenge</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, animi. Doloribus atque fugit cumque assumenda omnis voluptates illo quis pariatur. Quos fugit nulla aspernatur maxime maiores? Iste non odit inventore.</p>
-            <button class= "btn" id="start-btn">Start</button>
+            <p>Welcome to the Coding Quiz Challenge! Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time by ten seconds!</p>
+            <button class= "btn" id="start-btn">Start Quiz</button>
         </div>
         <div class="quiz-container hide" id="quiz-container">
             <div><h1 id="question">Question:</h1></div>
@@ -27,10 +27,11 @@
             </div>
         </div>
         <div class="final-score-container hide" id="final-score-form">
+            <h1>All done!</h1>
             <div id= final-score>final score</div>
             <form id="submit-final-score">
                 Enter Initials: <input type="text" name = "initials" id="initials">
-                <input type="submit" id="submit-button">
+                <input type="submit" class = "btn" id="submit-button">
             </form>
         </div>
     </main>

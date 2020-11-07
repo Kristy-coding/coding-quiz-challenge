@@ -35,44 +35,44 @@ var questionObjArray = [
     { //questionObj [0]
         title: "Arrays in JavaScript can be used to store___.",
         choices: [
-            "numbers and strings", //[0]
-            "other arrays",        //[1]
-            "booleans",            //[2]
-            "all of the above"     //[3]
+            "1. numbers and strings", //[0]
+            "2. other arrays",        //[1]
+            "3. booleans",            //[2]
+            "4. all of the above"     //[3]
         ],
-        answer: "all of the above"
+        answer: "4. all of the above"
     
     },
 
     {// questionObj [1]
-        title: "questions 2.",
+        title: "Inside which HTML element to we put JavaScript?",
         choices:[
-            "option 1", //[0]
-            "option 2", //[1]
-            "option 3", //[2]
-            "option 4", //[3]
+            "1. <scripting>", //[0]
+            "2. <script>", //[1]
+            "3. <js>", //[2]
+            "4. none of the above" //[3]
         ],
-        answer: "option 3"
+        answer: "2. <script>"
     },
      {// questionObj [2]
-        title: "questions 3.",
+        title: "A very useful tool for debugging is ____",
         choices:[
-            "option 1", //[0]
-            "option 2", //[1]
-            "option 3", //[2]
-            "option 4", //[3]
+            "1. for loops", //[0]
+            "2. terminal", //[1]
+            "3. arrays", //[2]
+            "4. console.log()" //[3]
         ],
-        answer: "option 2"
+        answer: "4. console.log()"
     },
      {// questionObj [3]
-        title: "questions 4.",
+        title: "How can you add a comment in JavaScript?",
         choices:[
-            "option 1", //[0]
-            "option 2", //[1]
-            "option 3", //[2]
-            "option 4", //[3]
+            "1. <!--This is a comment-->", //[0]
+            "2. 'This is a comment", //[1]
+            "3. //This is a comment", //[2]
+            "4. **This is a comment" //[3]
         ],
-        answer: "option 1"
+        answer: "3. //This is a comment"
     },
 ];
 
@@ -195,26 +195,29 @@ var endQuiz = function() {
 
 var scoreHandler = function(event) {
     event.preventDefault();
-    // save initials and score to local storage 
+    // store initials and score as object storedScore and save them in an array of highScore objects  
 
     var storedInitials = document.getElementById('initials').value;
     var storedScore = score
   
     if (storedInitials === '') {
-      alert("initials cannot be blank");
+        alert("initials cannot be blank");
 
     }
-    
-      // Save storedInitials and score to localStorage using `setItem()`
-      localStorage.setItem('initials', storedInitials);
-      localStorage.setItem('score', storedScore);
+
+    storedScoreObj = {initials: storedInitials, storedScore: storedScore};
+
+    // make an empty array [] for highscore 
+    // highScores.push(storedScoreObj)
+
+    // save highScores to local storage?
+
+    // localStorage.setItem JSON.stringify ('highScores', highScores);
+
+    // localStorage.getItemJSON.parse('highScores', highScores);
       
-
-      console.log(storedInitials,storedScore);
-
-        console.log("you are in scoreHandler");
-
-    //then the user is taken to the highscore page where their score and initials are displayed from local storage 
+    //then the user is taken to the highscore page where their score and initials are displayed from local storage
+    // store theses values in objects in an array?? so we can pull them from from local storage and save them on high score page??
 
 };
 

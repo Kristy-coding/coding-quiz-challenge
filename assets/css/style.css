@@ -1,3 +1,86 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 10px;
+    color: blueviolet;
+}
+
+h1 {
+    font-size: x-large;
+    padding-top: 50px;
+}
+
+.start-challenge-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    text-align: center;
+    
+}
+
+.quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 40vw;
+    margin-right: 30vw;
+    margin-left: 30vw;
+
+}
+
+.btn-grid {
+    display: grid;
+    grid-gap: 10px;
+    width: 50%;
+}
+
+.final-score-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 40vw;
+    margin-left: 30vw;
+    margin-right: 30vw;
+}
+.final-score-container div{
+    padding-bottom: 10px;
+}
+
 .hide {
     display: none;
+}
+.btn {
+    background-color: rgb(42, 21, 138);
+    color:white;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10px;
+}
+
+.btn:hover{
+    background-color: blueviolet;
+}
+
+input {
+    padding:5px 20px 5px 20px;
+}
+
+input:focus {
+    border: turquoise;
 }
