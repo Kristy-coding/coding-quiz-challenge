@@ -11,7 +11,8 @@ For this project we were given a mock up of a coding quiz. Our job was to create
 * JavaScript
 
 
-### Website: https://kristy-coding.github.io/coding-quiz-challenge/
+### Website: 
+https://kristy-coding.github.io/coding-quiz-challenge/
 
 
 
