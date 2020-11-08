@@ -1,13 +1,15 @@
 
 
-// we define a variable for the highScores array we are getting from local storage and sort the array
-var highScores = JSON.parse(localStorage.getItem('highScores', highScores));
-
 var highScoreList = document.getElementById("high-score-list");
 
 clearButtonEl = document.getElementById("clear-button");
 
 var printHighScores = function() {
+
+    // we define a variable for the highScores array we are getting from local storage and sort the array
+    var highScores = JSON.parse(localStorage.getItem('highScores'));    
+    
+    highScores.sort(function(a, b){return b.storedScore - a.storedScore});
 
     for (var i = 0; i<highScores.length; i++){
         
@@ -17,7 +19,8 @@ var printHighScores = function() {
         //target the textContent of the dynamically created highScoreListItemEl and concatenate the properties stored in the array objects so they appear together on the list
         highScoreListItemEl.textContent = highScores[i].initials + "-" + highScores[i].storedScore
 
-        highScoreList.appendChild(highScoreListItemEl); 
+        highScoreList.appendChild(highScoreListItemEl);
+
     }  
 };
 
