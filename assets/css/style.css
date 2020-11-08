@@ -23,6 +23,11 @@ h1 {
     padding-top: 50px;
 }
 
+a {
+    color: blueviolet;
+    text-decoration: none;
+}
+
 .start-challenge-container {
     display: flex;
     flex-wrap: wrap;
